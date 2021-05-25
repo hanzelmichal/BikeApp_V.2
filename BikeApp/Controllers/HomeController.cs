@@ -23,7 +23,7 @@ namespace BikeApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Maps()
         {
             return View();
         }

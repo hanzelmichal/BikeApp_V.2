@@ -1,6 +1,30 @@
 .custom-background {
-    background:  url("../lib/background.jpg");
+    background:  url("../lib/background-opacity08.jpg");
     background-size: cover;
     background-position: center center;
    
+}
+.linear {
+    background: linear-gradient(to left, #045D56, #1EB980 );
+    opacity: 0.7;
+}
+.txtcolor {
+    font-size: 20px;
+    color:white;
+}
+.color {
+    background: linear-gradient(to left, #045D56, #1EB980 );
+    opacity: 0.8;
+}
+.button{ 
+
+}
+iframe{
+    width:1100px;
+    height:750px;
+
+    
+}
+.div-iframe{ 
+    position: center;
 }
