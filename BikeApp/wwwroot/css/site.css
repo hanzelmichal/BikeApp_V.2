@@ -59,9 +59,12 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  font-family: "Roboto", sans-serif;
+    /* Margin bottom by footer height */
+    background-image: url(~/background.jpg);
+    margin: 0;
+    position:center center;
+    margin-bottom: 60px;
+    font-family: "Roboto", sans-serif;
 }
 .footer {
   position: absolute;
