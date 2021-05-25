@@ -28,3 +28,8 @@ iframe{
 .div-iframe{ 
     position: center;
 }
+.custom-table {
+    
+    border:5px solid #045D56;
+    background: linear-gradient(to left, #045D56, #1EB980 );
+}

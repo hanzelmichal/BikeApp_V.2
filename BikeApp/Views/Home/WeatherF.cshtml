@@ -1,0 +1,46 @@
+﻿@model BikeApp.Models.ForecastData.Root
+@{ Layout = "_Layout"; ViewBag.Title = "Forecast";}
+
+@try
+{
+    <h2>Weather Info for @Model.city.name  </h2>
+    <h3>From @Model.localDate</h3>
+
+    <link rel="stylesheet" href="~/css/custom.css" />
+
+    <table class="table table-sm table-striped table-bordered m-2 custom-table">
+        <thead><tr><th>Temperature</th><th>Humidity</th><th>Wind</th><th>Wind Direction</th><th>Pressure</th><th>Description</th></tr></thead>
+        <tbody>
+            @foreach (var item in Model.list)
+            {
+                <tr>
+
+                    
+                    <td>@item.temp.max °C </td>
+                    <td>@item.humidity %</td>
+                    <td>@item.speed km/h</td>
+                    <td>@item.deg °</td>
+                    <td>@item.pressure hPa</td>
+                    @foreach (var item1 in item.weather)
+                    {
+                        <td>@item1.description</td>
+
+                    }
+
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <br />
+    <a asp-action="" class="btn btn-sm btn-primary ">Search Again!</a>
+    <br />
+}
+catch
+{
+
+    <h1>I am sorry, I can't find your city :(</h1>
+
+    <br />
+    <a asp-action="" class="btn btn-sm btn-primary">Search Again!</a>}
