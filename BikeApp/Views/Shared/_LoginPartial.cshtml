@@ -4,6 +4,8 @@
 @inject SignInManager<AplicationUser> SignInManager
 @inject UserManager<AplicationUser> UserManager
 
+<link rel="stylesheet" href="~/css/custom.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
@@ -14,17 +16,17 @@
 
             <ul class="navbar-nav flex-grow-1 ">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Maps">Maps</a>
+                    <a class="nav-link text-white fas fa-map-marked-alt" asp-area="" asp-controller="Home" asp-action="Maps"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Weather">Weather</a>
+                    <a class="nav-link text-white fas fa-umbrella " asp-area="" asp-controller="Home" asp-action="Weather"></a>
                 </li>
             </ul>
         </div>
             
         <li class="nav-item">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                <button id="logout" type="submit" class="nav-link btn btn-link text-white"><a class="fas fa-sign-out-alt"></a></button>
             </form>
         </li>
 
@@ -32,10 +34,10 @@
     else
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link text-white fas fa-user-plus " id="register" asp-area="Identity" asp-page="/Account/Register"></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="nav-link text-white fas fa-sign-in-alt " id="login" asp-area="Identity" asp-page="/Account/Login"></a>        
         </li>
     }
 </ul>
