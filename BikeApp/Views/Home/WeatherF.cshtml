@@ -4,23 +4,23 @@
 @try
 {
     <h2>Weather Info for @Model.city.name  </h2>
-    <h3>From @Model.localDate</h3>
+    
 
     <link rel="stylesheet" href="~/css/custom.css" />
 
     <table class="table table-sm table-striped table-bordered m-2 custom-table">
-        <thead><tr><th>Temperature</th><th>Humidity</th><th>Wind</th><th>Wind Direction</th><th>Pressure</th><th>Description</th></tr></thead>
+        <thead><tr><th>Date</th><th>Temperature</th><th>Humidity</th><th>Wind</th><th>Wind Direction</th><th>Pressure</th><th>Description</th></tr></thead>
         <tbody>
             @foreach (var item in Model.list)
             {
                 <tr>
 
-                    
-                    <td>@item.temp.max °C </td>
-                    <td>@item.humidity %</td>
-                    <td>@item.speed km/h</td>
-                    <td>@item.deg °</td>
-                    <td>@item.pressure hPa</td>
+                    <td>@item.dt_txt</td>
+                    <td>@item.main.temp °C </td>
+                    <td>@item.main.humidity %</td>
+                    <td>@item.wind.speed km/h</td>
+                    <td>@item.wind.deg °</td>
+                    <td>@item.main.pressure hPa</td>
                     @foreach (var item1 in item.weather)
                     {
                         <td>@item1.description</td>

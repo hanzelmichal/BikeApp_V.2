@@ -38,7 +38,7 @@ namespace BikeApp.Controllers
         }
         public IActionResult WeatherF(string id )
         {
-            string prova = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + id + "&units=metric&lang=pl&cnt=16&appid=de324c3839d438273b1d6f72b2298694";
+            string prova = "https://pro.openweathermap.org/data/2.5/forecast/hourly?q=" + id + "&units=metric&lang=pl&cnt=16&appid=de324c3839d438273b1d6f72b2298694";
             Root results = _rs.GetForecastData(prova).Result;
 
 
