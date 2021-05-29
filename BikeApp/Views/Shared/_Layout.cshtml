@@ -16,7 +16,7 @@
     <header>
         <nav class="bg-transparent navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white ">
             <div class="container border-0">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/lib/Logo.png" alt="Bike logo" width="108" height="67" position="center center"/></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/lib/Logo.png" alt="Bike logo" width="108" height="67" position="center center" /></a>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                 </div>
@@ -31,13 +31,15 @@
 
     <footer class=" footer text-muted linear">
         <div class="container text-center text-xl-center txtcolor">
-            &copy; 2021 - BIKE APP x MICHAŁ HANZEL - <a asp-area="" asp-controller="Home"></a>
+            &copy; 2021 - BIKE APP x MICHAŁ HANZEL  <a asp-area="" asp-controller="Home"></a>
         </div>
     </footer>
-   
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @await Component.InvokeAsync("Notyf")
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>
