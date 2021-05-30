@@ -4,80 +4,118 @@
 @try
 {
     <h2><center>Weather Info for @Model.city.name</center></h2>
-    
+
 
     <link rel="stylesheet" href="~/css/custom.css" />
+    @foreach (var item in Model.list)
+    {
+        <div class="scrollmenu">
+            <div>
+                
+                    <table>
+                        <tr>
+                            <th>@item.dt_txt</th>
+                        </tr>
+                        <tr>
+                            <td>@item.main.temp</td>
+                        </tr>
+                        <tr>
+                            <td>@item.main.humidity</td>
+                        </tr>
+                        <tr>
+                            <td>@item.wind.speed</td>
+                        </tr>
+                        <tr>
+                            <td>@item.wind.deg</td>
+                        </tr>
+                        <tr>
+                            <td>@item.main.pressure</td>
+                        </tr>
+                        <tr>
+                            @foreach (var item1 in item.weather)
+                            {
+                                <td>@item1.description</td>
 
-    <div class="grid-container">
-        @foreach (var item in Model.list)
-        {
-            <div class="grid-container">
-            <div class="col-xs-4"><table>
-    <tr>
-        <th>@item.dt_txt</th>
-    </tr>
-    <tr>
-        <td>@item.main.temp</td>
-    </tr>
-    <tr>
-        <td>@item.main.humidity</td>
-    </tr>
-    <tr>
-        <td>@item.wind.speed</td>
-    </tr>
-    <tr>
-        <td>@item.wind.deg</td>
-    </tr>
-    <tr>
-        <td>@item.main.pressure</td>
-    </tr>
-    <tr>
-        @foreach (var item1 in item.weather)
-        {
-            <td>@item1.description</td>
-
-        }
-    </tr>
-</table>
-                </div>
-                @*<table>
-                    <tr>
-                        <th>@item.dt_txt</th>
-                    </tr>
-                    <tr>
-                        <td>@item.main.temp</td>
-                    </tr>
-                    <tr>
-                        <td>@item.main.humidity</td>
-                    </tr>
-                    <tr>
-                        <td>@item.wind.speed</td>
-                    </tr>
-                    <tr>
-                        <td>@item.wind.deg</td>
-                    </tr>
-                    <tr>
-                        <td>@item.main.pressure</td>
-                    </tr>
-                    <tr>
-                        @foreach (var item1 in item.weather)
-                        {
-                            <td>@item1.description</td>
-
-                        }
-                    </tr>
-                </table>*@
+                            }
+                        </tr>
+                    </table>
+                
             </div>
             
+        </div>
+    }
+        @*
+                <div class="grid-container text-white">
+                    @foreach (var item in Model.list)
+                    {
 
-        }
-    </div>
+                        <div class="col-xs-4" style="float:left;">
+                            <table>
+                <tr>
+                    <th>@item.dt_txt</th>
+                </tr>
+                <tr>
+                    <td>@item.main.temp</td>
+                </tr>
+                <tr>
+                    <td>@item.main.humidity</td>
+                </tr>
+                <tr>
+                    <td>@item.wind.speed</td>
+                </tr>
+                <tr>
+                    <td>@item.wind.deg</td>
+                </tr>
+                <tr>
+                    <td>@item.main.pressure</td>
+                </tr>
+                <tr>
+                    @foreach (var item1 in item.weather)
+                    {
+                        <td>@item1.description</td>
 
-       
-    <br />
-    <center><a asp-action="Weather" class="btn btn-info  ">SEARCH AGAIN</a></center>
-    <br />
-}
+                    }
+                </tr>
+            </table>
+                            </div>*@
+        @*<table>
+                <tr>
+                    <th>@item.dt_txt</th>
+                </tr>
+                <tr>
+                    <td>@item.main.temp</td>
+                </tr>
+                <tr>
+                    <td>@item.main.humidity</td>
+                </tr>
+                <tr>
+                    <td>@item.wind.speed</td>
+                </tr>
+                <tr>
+                    <td>@item.wind.deg</td>
+                </tr>
+                <tr>
+                    <td>@item.main.pressure</td>
+                </tr>
+                <tr>
+                    @foreach (var item1 in item.weather)
+                    {
+                        <td>@item1.description</td>
+
+                    }
+                </tr>
+            </table>*@
+
+
+
+
+
+
+
+        <br />
+        <center><a asp-action="Weather" class="btn btn-info  ">SEARCH AGAIN</a></center>
+        <br />
+    }
 catch
 {
 
