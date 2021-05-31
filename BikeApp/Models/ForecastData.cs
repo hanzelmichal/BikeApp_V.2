@@ -7,7 +7,7 @@ using System.Globalization;
 
 namespace BikeApp.Models.ForecastData
 {
-
+    
     public class Main
     {
         public double temp { get; set; }
@@ -85,6 +85,7 @@ namespace BikeApp.Models.ForecastData
         public List<List> list { get; set; }
         public City city { get; set; }
     }
+    
 }
 
 

@@ -11,9 +11,11 @@ using BikeApp.Services;
 using Microsoft.AspNetCore.Identity;
 using BikeApp.Areas.Identity.Data;
 using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BikeApp.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public INotyfService _notifyService { get; }
@@ -42,13 +44,15 @@ namespace BikeApp.Controllers
         {
             return View();
         }
-        public IActionResult WeatherF(string id )
+        public IActionResult Result(LocationModel location)
+        {
+            return RedirectToAction("WeatherF", "Home", new { lat = Math.Round(location.Latitude, 3), lon = Math.Round(location.Longitude, 3) });
+        }
+        public IActionResult WeatherF(double lat, double lon, LocationModel location)
         {
             _notifyService.Custom("Correct data download", 5, "#1EB980", "fa fa-home");
-            string prova = "https://pro.openweathermap.org/data/2.5/forecast/hourly?q=" + id + "&units=metric&lang=pl&cnt=16&appid=de324c3839d438273b1d6f72b2298694";
+            string prova = "https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=" + lat + "&lon=" + lon + "&units=metric&appid=de324c3839d438273b1d6f72b2298694";
             Root results = _rs.GetForecastData(prova).Result;
-
-
             return View(results);
         }
         public IActionResult Logout()
