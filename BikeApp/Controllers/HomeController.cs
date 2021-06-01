@@ -48,18 +48,24 @@ namespace BikeApp.Controllers
         {
             return RedirectToAction("WeatherF", "Home", new { lat = Math.Round(location.Latitude, 3), lon = Math.Round(location.Longitude, 3) });
         }
-        public IActionResult WeatherF(double lat, double lon, LocationModel location)
+        public IActionResult WeatherF(double lat, double lon, string id, LocationModel location)
         {
             _notifyService.Custom("Correct data download", 5, "#1EB980", "fa fa-home");
-            string prova = "https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=" + lat + "&lon=" + lon + "&units=metric&appid=de324c3839d438273b1d6f72b2298694";
-            Root results = _rs.GetForecastData(prova).Result;
-            return View(results);
+            if (id == null) 
+            {
+                string prova = "https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=" + lat + "&lon=" + lon + "&units=metric&appid=de324c3839d438273b1d6f72b2298694";
+                Root results = _rs.GetForecastData(prova).Result;
+                return View(results);
+
+            }
+            else
+            {
+                string prova = "https://pro.openweathermap.org/data/2.5/forecast/hourly?q=" + id + "&units=metric&appid=de324c3839d438273b1d6f72b2298694";
+                Root results = _rs.GetForecastData(prova).Result;
+                return View(results);
+            }
         }
-        public IActionResult Logout()
-        {
-            _notifyService.Custom("Succes logout", 5, "#1EB980", "fa fa-home");
-            return View();
-        }
+       
        
 
 

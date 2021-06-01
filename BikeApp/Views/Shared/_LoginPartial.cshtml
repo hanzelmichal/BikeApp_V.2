@@ -11,16 +11,16 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <a id="manage" class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+            <a id="manage" style="color:#045D56" class="nav-link " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
         </li>
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 
             <ul class="navbar-nav flex-grow-1 ">
                 <li class="nav-item">
-                    <a class="nav-link text-white fas fa-map-marked-alt" asp-area="" asp-controller="Home" asp-action="Maps"></a>
+                    <a style ="color: #045D56 " class="nav-link  fas fa-map-marked-alt" asp-area="" asp-controller="Home" asp-action="Maps"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fas fa-umbrella " asp-area="" asp-controller="Home" asp-action="Weather"></a>
+                    <a style ="color:#045D56" class="nav-link  fas fa-umbrella " asp-area="" asp-controller="Home" asp-action="Weather"></a>
                 </li>
             </ul>
         </div>
@@ -28,7 +28,7 @@
         <li class="nav-item">
             
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Logout", "Home", new { area = "" })">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-white"><a class="fas fa-sign-out-alt"></a></button>
+                <button id="logout"  style="color:#045D56" type="submit" class="nav-link btn btn-link"><a class="fas fa-sign-out-alt"></a></button>
             </form>
         </li>
 
@@ -36,10 +36,10 @@
     else
     {
         <li class="nav-item">
-            <a class="nav-link text-white fas fa-user-plus " id="register" asp-area="Identity" asp-page="/Account/Register"></a>
+            <a  style="color:#045D56" class="nav-link fas fa-user-plus " id="register" asp-area="Identity" asp-page="/Account/Register"></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white fas fa-sign-in-alt " id="login" asp-area="Identity" asp-page="/Account/Login"></a>        
+            <a  style="color:#045D56" class="nav-link fas fa-sign-in-alt " id="login" asp-area="Identity" asp-page="/Account/Login"></a>        
         </li>
     }
 </ul>
