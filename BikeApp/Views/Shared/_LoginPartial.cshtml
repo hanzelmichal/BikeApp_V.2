@@ -27,7 +27,7 @@
             
         <li class="nav-item">
             
-            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Logout", "Home", new { area = "" })">
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                 <button id="logout"  style="color:#045D56" type="submit" class="nav-link btn btn-link"><a class="fas fa-sign-out-alt"></a></button>
             </form>
         </li>

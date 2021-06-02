@@ -1,64 +1,65 @@
 ﻿@model BikeApp.Models.ForecastData.Root
 @{ Layout = "_Layout"; ViewBag.Title = "Forecast";}
-<div style="background-color: white; padding:20px; border-radius:20px; width:800px; margin:auto;">
- <h2 class="text-center">Weather Info for @Model.city.name</h2>
-    <br />
- <div class="container" style="height:35rem; overflow-y:scroll">
-     <link rel="stylesheet" href="~/css/custom.css" />
-     @foreach (var item in Model.list)
-     {
 
- <div class="text-black">
+    <div style="background-color: white; padding:20px; border-radius:20px; border: 2px solid #045D56 ; width:800px; margin:auto;">
+        <h2 class="text-center">Weather Info for @Model.city.name</h2>
+        <br />
+        <div class="container" style="height:35rem; overflow-y:scroll">
+            <link rel="stylesheet" href="~/css/custom.css" />
+            @foreach (var item in Model.list)
+            {
 
-     <div class="container-fluid ">
-         <div class="col ">
-             <div class="col  text-center">
-                 @foreach (var item1 in item.weather)
-                 {
-                     string iconmeteo = " ";
-                     switch (item1.description.ToString())
-                     {
-                         case "clear sky":<img src="~/lib/weather-icon/01d.png" /> break;
-                         case "few clouds": <img src="~/lib/weather-icon/02d.png" /> break;
-                         case "scattered clouds": <img src="~/lib/weather-icon/03d.png" /> break;
-                         case "broken clouds": <img src="~/lib/weather-icon/04d.png" /> break;
-                         case "shower rain": <img src="~/lib/weather-icon/09d.png" /> break;
-                         case "rain": <img src="~/lib/weather-icon/10d.png" /> break;
-                         case "thunderstorm": <img src="~/lib/weather-icon/11d.png" /> break;
-                         case "snow":<img src="~/lib/weather-icon/13d.png" /> break;
-                         case "fog": <img src="~/lib/weather-icon/50d.png" /> break;
-                         case "overcast clouds":<img src="~/lib/weather-icon/04d.png" />break;
-                         case "light rain": <img src="~/lib/weather-icon/10d.png" /> break;
-                     }
-                     <br />
-                     <b>@iconmeteo @item1.description</b>
-                 }
-             </div>
-             <div class="col  text-center">
-                 <b>@item.dt_txt</b><br />
-                 <b>Temperature:</b> @item.main.temp °C<br />
-                 <b>Humidity:</b> @item.main.humidity %<br />
-                 <b>Wind Speed:</b> @item.wind.speed km/h<br />
-                 <b>Wind Degree:</b> @item.wind.deg °<br />
-                 <b>Pressure:</b> @item.main.grnd_level hPa<br />
-             </div>
+                <div class="text-black">
 
-         </div>
-     </div>
-     <br/>
-     <br />
-    
+                    <div class="container-fluid ">
+                        <div class="col ">
+                            <div class="col  text-center">
+                                @foreach (var item1 in item.weather)
+                                {
+                                    string iconmeteo = " ";
+                                    switch (item1.description.ToString())
+                                    {
+                                        case "clear sky":<img src="~/lib/weather-icon/01d.png" /> break;
+                                        case "few clouds": <img src="~/lib/weather-icon/02d.png" /> break;
+                                        case "scattered clouds": <img src="~/lib/weather-icon/03d.png" /> break;
+                                        case "broken clouds": <img src="~/lib/weather-icon/04d.png" /> break;
+                                        case "shower rain": <img src="~/lib/weather-icon/09d.png" /> break;
+                                        case "rain": <img src="~/lib/weather-icon/10d.png" /> break;
+                                        case "thunderstorm": <img src="~/lib/weather-icon/11d.png" /> break;
+                                        case "snow":<img src="~/lib/weather-icon/13d.png" /> break;
+                                        case "fog": <img src="~/lib/weather-icon/50d.png" /> break;
+                                        case "overcast clouds":<img src="~/lib/weather-icon/04d.png" />break;
+                                        case "light rain": <img src="~/lib/weather-icon/10d.png" /> break;
+                                    }
+                                    <br />
+                                    <b>@iconmeteo @item1.description</b>
+                                }
+                            </div>
+                            <div class="col  text-center">
+                                <b>@item.dt_txt</b><br />
+                                <b>Temperature:</b> @item.main.temp °C<br />
+                                <b>Humidity:</b> @item.main.humidity %<br />
+                                <b>Wind Speed:</b> @item.wind.speed km/h<br />
+                                <b>Wind Degree:</b> @item.wind.deg °<br />
+                                <b>Pressure:</b> @item.main.grnd_level hPa<br />
+                            </div>
 
-
- </div>
-             }
+                        </div>
+                    </div>
+                    <br />
+                    <br />
 
 
 
+                </div>
+            }
 
 
- </div>
-     <br />
-     <center><a asp-action="Weather" class="btn btn-info  ">SEARCH AGAIN</a></center>
-     <br />
-</div>
+
+
+
+        </div>
+        <br />
+        <center><a asp-action="Weather" class="btn btn-info custom-radius ">SEARCH AGAIN</a></center>
+        <br />
+    </div>

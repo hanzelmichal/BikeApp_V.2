@@ -22,19 +22,20 @@
 <br />
 <br />
 <br />
-<div style="background-color: white; padding:20px; border-radius:10px;" >
-    <div class="text-center">
-        <h1 class="custom-linear">SEARCH CITY AND CHECK WEATHER FOR YOUR BIKE TRIP</h1>
-        <br />
-        <input type="text" class="form-control" id="usr" text-center>
-        <br />
-        <button id="location" onclick="getLocation()" class="btn btn-info">LOCATE ME</button>
-        <input type="button" class="btn btn-info" id="WeatherForecast" value="GET FORECAST" />
+<div style="background-color: white; padding:30px; border-radius:10px;">
+    <div style="background-color: white; padding:20px; border-radius:10px; border:3px solid #045D56">
+        <div class="text-center">
+            <h1 class="custom-linear">SEARCH CITY AND CHECK WEATHER FOR YOUR BIKE TRIP</h1>
+            <br />
+            <input type="text" class="form-control custom-radius" id="usr" text-center>
+            <br />
+            <button id="location" onclick="getLocation()" class="btn btn-info custom-radius">LOCATE ME</button>
+            <input type="button" class="btn btn-info custom-radius" id="WeatherForecast" value="GET FORECAST" />
 
 
+        </div>
     </div>
 </div>
-
     @section Scripts{
         <script type="text/javascript">
         $("#WeatherForecast").click(function () {

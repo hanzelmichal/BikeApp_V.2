@@ -1,5 +1,5 @@
 .custom-background {
-    background:  url("../lib/background-opacity08.jpg");
+    background:  url("../lib/background.gif");
     background-size: cover;
     background-position: center center;
    
@@ -40,7 +40,7 @@ h1.custom-linear {
 }
 .custom-loginregister {
     background: linear-gradient(90deg, rgba(4,93,86,1) 0%, rgba(30,185,128,1) 100%);
-    border: 2px solid white;
+    border: 2px solid rgba(4,93,86,1);
     border-radius: 25px;
     padding:25px;
 }
@@ -78,4 +78,9 @@ div.scrollmenu {
         text-align: center;
         padding: 14px;
         text-decoration: none;
+    }
+    .custom-radius {
+        border-radius:1.5rem;
+        border: 2px solid rgba(4,93,86,1);
+        padding:10px;
     }

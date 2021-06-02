@@ -51,7 +51,7 @@ namespace BikeApp.Controllers
         public IActionResult WeatherF(double lat, double lon, string id, LocationModel location)
         {
             _notifyService.Custom("Correct data download", 5, "#1EB980", "fa fa-home");
-            if (id == null) 
+            if (id == null)
             {
                 string prova = "https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=" + lat + "&lon=" + lon + "&units=metric&appid=de324c3839d438273b1d6f72b2298694";
                 Root results = _rs.GetForecastData(prova).Result;
@@ -65,7 +65,12 @@ namespace BikeApp.Controllers
                 return View(results);
             }
         }
-       
+        [Authorize]
+        public IActionResult Logout()
+        {
+            _notifyService.Custom("Succes logout", 5, "#1EB980", "fa fa-home");
+            return View();
+        }
        
 
 
