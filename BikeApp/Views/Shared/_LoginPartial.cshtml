@@ -11,7 +11,7 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <a id="manage" style="color:#045D56" class="nav-link " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+            <b><a id="manage" style="color:#045D56" class="nav-link " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a></b>
         </li>
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 
