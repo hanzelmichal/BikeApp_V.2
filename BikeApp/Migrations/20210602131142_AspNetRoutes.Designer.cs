@@ -4,14 +4,16 @@ using BikeApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikeApp.Migrations
 {
     [DbContext(typeof(BikeAuthContext))]
-    partial class BikeAuthContextModelSnapshot : ModelSnapshot
+    [Migration("20210602131142_AspNetRoutes")]
+    partial class AspNetRoutes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -80,5 +80,11 @@ namespace BikeApp.Controllers
             _notifyService.Custom("Some unknown problem ", 5, "#FF6859", "fa fa-home");
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [HttpPost]
+        public IActionResult AddRoute(UserRoute userRoute)
+        {
+
+            return RedirectToAction(nameof(Maps));
+        }
     }
 }
