@@ -1,38 +1,61 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model UserRoute
 <link rel="stylesheet" href="~/css/custom.css" />
-@{
+<div class="container" id="maps">
     <div style="background-color: white; padding:30px; border-radius:10px" class="col">
         <div class="div-iframe">
             <iframe src="http://localhost:44320" title="ORS Maps Service"></iframe>
         </div>
+        <div class="col text-center" id="buttons" style="padding-top:10px">
+            <a id="2" href="#" class="fas fa-plus-circle fa-3x" style="color:#045D56; border:none; background:white;"></a>
+            <a id="3" href="#" class="fas fa-search fa-3x" style="color:#045D56; border:none; background:white"></a>
+        </div>
     </div>
-    <br />
-    <div style="background-color: white; padding:30px; border-radius:10px" class="col">
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
-        <b>test</b>
-        <br />
+
+    <div>&nbsp;</div>
+    <div id="pages">
+        <div id="2" class="add-div col" style="background-color: white; padding:30px; border-radius:10px">
+            <div class="custom-radius choice-div-in text-center" id="2" >
+                <h3 class="custom-linear">Add your route</h3>
+                <br />
+                <form asp-action="AddRoute" asp-controller="Home"
+                      data-ajax="true"
+                      data-ajax-method="POST"
+                      data-ajax-mode="replace"
+                      data-ajax-update="#container2">
+                    <form asp-action="AddRoute" asp-controller="Home">
+                        <b>Copy your link </b>
+                        <input type="text" class="form-control custom-radius" asp-for="Link" text-center>
+                        <b>City</b>
+                        <input type="text" class="form-control custom-radius" asp-for="City" text-center>
+                        <b>Name Your Route</b>
+                        <input type="text" class="form-control custom-radius" asp-for="RouteName" text-center>
+                        <br />
+                        <button id="add" type="submit" class="btn btn-info custom-radius">ADD</button>
+                    </form>
+                </form>
+            </div>
+        </div >
+        
+
+        <div id="3" class="search-div col" style="background-color: white; padding:30px; border-radius:10px">
+            <div class="custom-radius choice-div-in text-center" id="3">
+                <h3 class="custom-linear">Search route by city</h3>
+                <input type="text" class="form-control custom-radius" text-center />
+                <br />
+                <button id="search" type="submit" class="btn btn-info custom-radius">SEARCH</button>
+            </div>
+        </div >
+        <div>&nbsp;</div>
+
     </div>
+</div>
+@section Scripts {
+<script>
+    $("#buttons a").click(function () {
+        var id = $(this).attr("id");
+        $("#pages div").css("display", "none");
+        $("#pages div#" + id + "").css("display", "block");
+    }
+        )
+</script>
 }
