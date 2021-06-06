@@ -13,38 +13,40 @@
 
     <div>&nbsp;</div>
     <div id="pages">
-        <div id="2" class="add-div col" style="background-color: white; padding:30px; border-radius:10px; display:none">
-            <div class="custom-radius choice-div-in text-center" id="2" >
+        <div id="2" class="col" style="background-color: white; padding:30px; border-radius:10px; display:none">
+            <div class="custom-radius choice-div-in text-center" id="2" style="display:none">
                 <h3 class="custom-linear">Add your route</h3>
                 <br />
+               
                 <form asp-action="AddRoute" asp-controller="Home"
-                      data-ajax="true"
-                      data-ajax-method="POST"
-                      data-ajax-mode="replace"
-                      data-ajax-update="#container2">
-                    <form asp-action="AddRoute" asp-controller="Home">
-                        <b>Copy your link </b>
-                        <input type="text" class="form-control custom-radius" asp-for="Link" text-center>
-                        <b>City</b>
-                        <input type="text" class="form-control custom-radius" asp-for="City" text-center>
-                        <b>Name Your Route</b>
-                        <input type="text" class="form-control custom-radius" asp-for="RouteName" text-center>
-                        <br />
-                        <button id="add" type="submit" class="btn btn-info custom-radius">ADD</button>
-                    </form>
-                </form>
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-mode="replace"
+              data-ajax-update="#container2">
+            <form asp-action="AddRoute" asp-controller="Home">
+                <b>Copy your link </b>
+                <input type="text" class="form-control custom-radius" asp-for="Input.Link" text-center>
+                <b>City</b>
+                <input type="text" class="form-control custom-radius" asp-for="Input.City" text-center>
+                <b>Name Your Route</b>
+                <input type="text" class="form-control custom-radius" asp-for="Input.RouteName" text-center>
+                <br />
+                <button id="add" type="submit" class="btn btn-info custom-radius">ADD</button>
+            </form>
+        </form>
             </div>
         </div >
         
 
-        <div id="3" class="search-div col" style="background-color: white; padding:30px; border-radius:10px; display:none;">
-            <div class="custom-radius choice-div-in text-center" id="3">
+        <div id="3" class="col" style="background-color: white; padding:30px; border-radius:10px; display:none;">
+            <div class="custom-radius choice-div-in text-center" id="3" style="display:none">
                 <h3 class="custom-linear">Search route by city</h3>
                 <input type="text" class="form-control custom-radius" text-center />
                 <br />
                 <button id="search" type="submit" class="btn btn-info custom-radius">SEARCH</button>
             </div>
         </div >
+        <br/>
         <div>&nbsp;</div>
 
     </div>
