@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Identity;
 using BikeApp.Areas.Identity.Data;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authorization;
+using BikeApp.Data;
+using Microsoft.AspNet.Identity;
 
 namespace BikeApp.Controllers
 {
@@ -19,14 +21,18 @@ namespace BikeApp.Controllers
     public class HomeController : Controller
     {
         public INotyfService _notifyService { get; }
+        public BikeAuthContext _context { get; set; }
         public RestService _rs { get; set; }
         private readonly ILogger<HomeController> _logger;
+        private readonly Microsoft.AspNetCore.Identity.UserManager<IdentityUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger, INotyfService notifyService)
+        public HomeController(ILogger<HomeController> logger, INotyfService notifyService, BikeAuthContext context, UserManager userManager)
         {
             _rs = new RestService();
             _logger = logger;
             _notifyService = notifyService;
+            _context = context;
+            _userManager = userManager;
         }
             public IActionResult Index()
         {
@@ -83,7 +89,7 @@ namespace BikeApp.Controllers
         [HttpPost]
         public IActionResult AddRoute(UserRoute userRoute)
         {
-
+            _context.UserRoute.Add(userRoute);
             return RedirectToAction(nameof(Maps));
         }
     }
