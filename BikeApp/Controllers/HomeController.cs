@@ -24,15 +24,15 @@ namespace BikeApp.Controllers
         public BikeAuthContext _context { get; set; }
         public RestService _rs { get; set; }
         private readonly ILogger<HomeController> _logger;
-        private readonly Microsoft.AspNetCore.Identity.UserManager<IdentityUser> _userManager;
+        
 
-        public HomeController(ILogger<HomeController> logger, INotyfService notifyService, BikeAuthContext context, UserManager userManager)
+        public HomeController(ILogger<HomeController> logger, INotyfService notifyService, BikeAuthContext context)
         {
             _rs = new RestService();
             _logger = logger;
             _notifyService = notifyService;
             _context = context;
-            _userManager = userManager;
+            
         }
             public IActionResult Index()
         {
@@ -89,7 +89,7 @@ namespace BikeApp.Controllers
         [HttpPost]
         public IActionResult AddRoute(UserRoute userRoute)
         {
-            _context.UserRoute.Add(userRoute);
+            
             return RedirectToAction(nameof(Maps));
         }
     }

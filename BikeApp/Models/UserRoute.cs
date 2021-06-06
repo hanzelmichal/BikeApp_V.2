@@ -11,21 +11,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace BikeApp.Models
 {
 
-    public class UserRoute:PageModel
+    public class UserRoute
     {
-
-        [BindProperty]
-        public InputModel Input { get; set; }
-
-        public class InputModel
-        {
-
             /*[Key]*/
             public int RouteId { get; set; }
             public string Link { get; set; }
             public string UserId { get; set; }
             public string City { get; set; }
             public string RouteName { get; set; }
-        }
+        
     }
 }
